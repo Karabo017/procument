@@ -7,8 +7,11 @@ on:
     branches: [main]
 
 jobs:
-  build-and-test:
+  frontend-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./procumentplatform/frontend
 
     steps:
       - name: Checkout code
@@ -23,7 +26,31 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm test
+        run: npm test -- --watch=false --browsers=ChromeHeadless
 
-      - name: Check formatting (optional)
-        run: npm run format --if-present
+      - name: Build project
+        run: npm run build
+
+  backend-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./procumentplatform/backend
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build project
+        run: dotnet build --no-restore
+
+      - name: Run tests
+        run: dotnet test --no-build --verbosity normal
