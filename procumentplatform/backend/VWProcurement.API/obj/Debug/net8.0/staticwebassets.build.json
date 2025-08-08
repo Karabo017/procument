@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "agjnu4JTyfTLGgaxtcyMRMA4WBOkg2mV2hjv0niXxGg=",
+  "Source": "VWProcurement.API",
+  "BasePath": "_content/VWProcurement.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "VWProcurement.API\\wwwroot",
+      "Source": "VWProcurement.API",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\index.html",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3rr61adjhm",
+      "Integrity": "AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.3rr61adjhm.html",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16987"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 04 Aug 2025 10:13:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3rr61adjhm"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16987"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 04 Aug 2025 10:13:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8="
+        }
+      ]
+    }
+  ]
+}

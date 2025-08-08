@@ -1,0 +1,22 @@
+<h2>Evaluate Tenders</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Tender</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- TODO: Bind tenders to evaluate here -->
+    <tr *ngFor="let tender of tendersToEvaluate">
+      <td>{{ tender.title }}</td>
+      <td>{{ tender.status }}</td>
+      <td>
+        <button>View</button>
+        <button>Score</button>
+        <button>Approve</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

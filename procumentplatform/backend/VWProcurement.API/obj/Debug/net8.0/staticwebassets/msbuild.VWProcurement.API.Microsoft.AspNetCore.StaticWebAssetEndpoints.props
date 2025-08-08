@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/VWProcurement.API/index.3rr61adjhm.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3rr61adjhm"},{"Name":"integrity","Value":"sha256-AZXr9wgvwjOD6HH0afIrmevm\u002BFE6Rc\u002Bbi2\u002BFBr7L9E8="},{"Name":"label","Value":"_content/VWProcurement.API/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"16987"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022AZXr9wgvwjOD6HH0afIrmevm\u002BFE6Rc\u002Bbi2\u002BFBr7L9E8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 04 Aug 2025 10:13:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/VWProcurement.API/index.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-AZXr9wgvwjOD6HH0afIrmevm\u002BFE6Rc\u002Bbi2\u002BFBr7L9E8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"16987"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022AZXr9wgvwjOD6HH0afIrmevm\u002BFE6Rc\u002Bbi2\u002BFBr7L9E8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 04 Aug 2025 10:13:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,21 @@
+<h2>Tender Approval</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Tender</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- TODO: Bind tenders pending approval here -->
+    <tr *ngFor="let tender of tendersPendingApproval">
+      <td>{{ tender.title }}</td>
+      <td>{{ tender.status }}</td>
+      <td>
+        <button>Approve</button>
+        <button>Reject</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

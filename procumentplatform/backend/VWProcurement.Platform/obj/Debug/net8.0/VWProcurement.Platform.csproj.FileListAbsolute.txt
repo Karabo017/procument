@@ -1,0 +1,5 @@
+C:\Users\KaraboSeolwana\Desktop\VW-Procurement\vw-procurement-backend\VWProcurement.Platform\obj\Debug\net8.0\VWProcurement.Platform.csproj.AssemblyReference.cache
+C:\Users\KaraboSeolwana\Desktop\VW-Procurement\vw-procurement-backend\VWProcurement.Platform\obj\Debug\net8.0\VWProcurement.Platform.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KaraboSeolwana\Desktop\VW-Procurement\vw-procurement-backend\VWProcurement.Platform\obj\Debug\net8.0\VWProcurement.Platform.AssemblyInfoInputs.cache
+C:\Users\KaraboSeolwana\Desktop\VW-Procurement\vw-procurement-backend\VWProcurement.Platform\obj\Debug\net8.0\VWProcurement.Platform.AssemblyInfo.cs
+C:\Users\KaraboSeolwana\Desktop\VW-Procurement\vw-procurement-backend\VWProcurement.Platform\obj\Debug\net8.0\VWProcurement.Platform.csproj.CoreCompileInputs.cache

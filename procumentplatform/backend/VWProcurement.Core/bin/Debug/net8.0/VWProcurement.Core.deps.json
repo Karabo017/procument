@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "VWProcurement.Core/1.0.0": {
+        "runtime": {
+          "VWProcurement.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VWProcurement.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

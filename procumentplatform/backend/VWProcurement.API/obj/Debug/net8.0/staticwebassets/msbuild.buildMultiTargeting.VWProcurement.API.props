@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VWProcurement.API.props" />
+</Project>
