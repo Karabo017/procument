@@ -45,9 +45,9 @@ namespace VWProcurement.Platform.Services
                 Description = dto.Description,
                 Requirements = dto.Requirements,
                 EstimatedValue = dto.EstimatedValue,
-                ClosingDate = dto.ClosingDate,
+                ClosingDate = dto.ClosingDate ?? DateTime.UtcNow.AddDays(30),
                 BuyerId = dto.BuyerId,
-                Status = TenderStatus.Draft.ToString(),
+                Status = TenderStatus.Draft,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
@@ -82,7 +82,7 @@ namespace VWProcurement.Platform.Services
             return MapToDto(updatedTender!);
         }
 
-        public async Task<bool> DeleteTenderAsync(int id)
+        public async Task<bool> DeleteTenderAsync(Guid id)
         {
             var tender = await _unitOfWork.Tenders.GetByIdAsync(id);
             if (tender == null) return false;
@@ -99,14 +99,14 @@ namespace VWProcurement.Platform.Services
             return true;
         }
 
-        public async Task<bool> PublishTenderAsync(int id, PublishTenderDto dto)
+        public async Task<bool> PublishTenderAsync(Guid id, PublishTenderDto dto)
         {
             var tender = await _unitOfWork.Tenders.GetByIdAsync(id);
             if (tender == null || tender.Status != TenderStatus.Draft) return false;
 
             tender.Status = TenderStatus.Open;
             tender.PublishedAt = DateTime.UtcNow;
-            if (dto.ClosingDate.HasValue) tender.ClosingDate = dto.ClosingDate;
+            if (dto.ClosingDate.HasValue) tender.ClosingDate = dto.ClosingDate.Value;
             tender.UpdatedAt = DateTime.UtcNow;
 
             _unitOfWork.Tenders.Update(tender);
@@ -114,7 +114,7 @@ namespace VWProcurement.Platform.Services
             return true;
         }
 
-        public async Task<bool> CloseTenderAsync(int id)
+        public async Task<bool> CloseTenderAsync(Guid id)
         {
             var tender = await _unitOfWork.Tenders.GetByIdAsync(id);
             if (tender == null || tender.Status != TenderStatus.Open) return false;
@@ -127,7 +127,7 @@ namespace VWProcurement.Platform.Services
             return true;
         }
 
-        public async Task<bool> AwardTenderAsync(int tenderId, int bidId)
+        public async Task<bool> AwardTenderAsync(Guid tenderId, Guid bidId)
         {
             var tender = await _unitOfWork.Tenders.GetByIdAsync(tenderId);
             var bid = await _unitOfWork.Bids.GetByIdAsync(bidId);

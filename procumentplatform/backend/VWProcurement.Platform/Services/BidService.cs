@@ -39,51 +39,15 @@ namespace VWProcurement.Platform.Services
 
         public async Task<BidDto> SubmitBidAsync(Guid supplierId, BidSubmissionDto dto)
         {
-            // Stub implementation
-            throw new NotImplementedException("SubmitBidAsync not yet implemented");
-        }
-
-        public async Task<BidDto?> UpdateBidAsync(Guid id, UpdateBidDto dto)
-        {
-            // Stub implementation
-            throw new NotImplementedException("UpdateBidAsync not yet implemented");
-        }
-
-        public async Task<bool> WithdrawBidAsync(Guid id, Guid supplierId)
-        {
-            // Stub implementation
-            throw new NotImplementedException("WithdrawBidAsync not yet implemented");
-        }
-
-        public async Task<bool> ReviewBidAsync(Guid id, BidStatus status, string? notes)
-        {
-            // Stub implementation
-            throw new NotImplementedException("ReviewBidAsync not yet implemented");
-        }
-            return bids.Select(MapToDto);
-        }
-
-        public async Task<IEnumerable<BidDto>> GetBidsByTenderAsync(int tenderId)
-        {
-            var bids = await _unitOfWork.Bids.GetBidsByTenderAsync(tenderId);
-            return bids.Select(MapToDto);
-        }
-
-        public async Task<BidDto> SubmitBidAsync(int supplierId, BidSubmissionDto dto)
-        {
-            // Check if tender exists and is open
+            // Validate tender exists and is open
             var tender = await _unitOfWork.Tenders.GetByIdAsync(dto.TenderId);
-            if (tender == null || tender.Status != TenderStatus.Open)
-                throw new InvalidOperationException("Tender is not available for bidding");
-
-            // Check if closing date has passed
-            if (tender.ClosingDate.HasValue && tender.ClosingDate < DateTime.UtcNow)
-                throw new InvalidOperationException("Tender has already closed");
+            if (tender == null)
+                throw new ArgumentException("Tender not found");
 
             // Check if supplier already has a bid for this tender
             var existingBid = await _unitOfWork.Bids.GetBidBySupplierAndTenderAsync(supplierId, dto.TenderId);
             if (existingBid != null)
-                throw new InvalidOperationException("Supplier has already submitted a bid for this tender");
+                throw new InvalidOperationException("Supplier already has a bid for this tender");
 
             var bid = new Bid
             {
@@ -92,55 +56,44 @@ namespace VWProcurement.Platform.Services
                 TenderId = dto.TenderId,
                 SupplierId = supplierId,
                 Status = BidStatus.Submitted,
-                SubmittedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                SubmittedAt = DateTime.UtcNow
             };
 
             await _unitOfWork.Bids.AddAsync(bid);
             await _unitOfWork.SaveChangesAsync();
 
-            // Reload to get related data
-            var submittedBid = await _unitOfWork.Bids.GetBidBySupplierAndTenderAsync(supplierId, dto.TenderId);
-            return MapToDto(submittedBid!);
+            return MapToDto(bid);
         }
 
-        public async Task<BidDto?> UpdateBidAsync(int id, UpdateBidDto dto)
+        public async Task<BidDto?> UpdateBidAsync(Guid id, UpdateBidDto dto)
         {
             var bid = await _unitOfWork.Bids.GetByIdAsync(id);
             if (bid == null) return null;
 
-            // Only allow updates if bid is still in submitted status
-            if (bid.Status != BidStatus.Submitted)
-                throw new InvalidOperationException("Cannot update bid that is already under review or processed");
-
             if (dto.Amount.HasValue) bid.Amount = dto.Amount.Value;
-            if (dto.Proposal != null) bid.Proposal = dto.Proposal;
+            if (!string.IsNullOrEmpty(dto.Proposal)) bid.Proposal = dto.Proposal;
             if (dto.Status.HasValue) bid.Status = dto.Status.Value;
-            if (dto.Notes != null) bid.Notes = dto.Notes;
-            
-            bid.UpdatedAt = DateTime.UtcNow;
+            if (!string.IsNullOrEmpty(dto.Notes)) bid.Notes = dto.Notes;
 
             _unitOfWork.Bids.Update(bid);
             await _unitOfWork.SaveChangesAsync();
 
-            var updatedBid = await _unitOfWork.Bids.GetBidBySupplierAndTenderAsync(bid.SupplierId, bid.TenderId);
-            return MapToDto(updatedBid!);
+            return MapToDto(bid);
         }
 
-        public async Task<bool> WithdrawBidAsync(int id, int supplierId)
+        public async Task<bool> WithdrawBidAsync(Guid id, Guid supplierId)
         {
             var bid = await _unitOfWork.Bids.GetByIdAsync(id);
             if (bid == null || bid.SupplierId != supplierId) return false;
 
-            // Only allow withdrawal if bid is still in submitted status
-            if (bid.Status != BidStatus.Submitted) return false;
-
-            _unitOfWork.Bids.Remove(bid);
+            bid.Status = BidStatus.Withdrawn;
+            _unitOfWork.Bids.Update(bid);
             await _unitOfWork.SaveChangesAsync();
+            
             return true;
         }
 
-        public async Task<bool> ReviewBidAsync(int id, BidStatus status, string? notes)
+        public async Task<bool> ReviewBidAsync(Guid id, BidStatus status, string? notes)
         {
             var bid = await _unitOfWork.Bids.GetByIdAsync(id);
             if (bid == null) return false;
@@ -148,10 +101,10 @@ namespace VWProcurement.Platform.Services
             bid.Status = status;
             bid.Notes = notes;
             bid.ReviewedAt = DateTime.UtcNow;
-            bid.UpdatedAt = DateTime.UtcNow;
 
             _unitOfWork.Bids.Update(bid);
             await _unitOfWork.SaveChangesAsync();
+
             return true;
         }
 
@@ -168,7 +121,7 @@ namespace VWProcurement.Platform.Services
                 Notes = bid.Notes,
                 ReviewedAt = bid.ReviewedAt,
                 SupplierId = bid.SupplierId,
-                SupplierName = bid.Supplier?.Name ?? "",
+                SupplierName = bid.Supplier?.User?.Name ?? "",
                 TenderId = bid.TenderId,
                 TenderTitle = bid.Tender?.Title ?? ""
             };

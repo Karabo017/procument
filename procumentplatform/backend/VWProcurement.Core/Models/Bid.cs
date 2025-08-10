@@ -9,7 +9,8 @@ namespace VWProcurement.Core.Models
         UnderReview,
         Shortlisted,
         Awarded,
-        Rejected
+        Rejected,
+        Withdrawn
     }
 
     public class Bid
@@ -29,8 +30,7 @@ namespace VWProcurement.Core.Models
         
         public string? AttachmentPath { get; set; }
         
-        [StringLength(50)]
-        public string Status { get; set; } = "Submitted";
+        public BidStatus Status { get; set; } = BidStatus.Submitted;
         
         public DateTime SubmissionDate { get; set; } = DateTime.UtcNow;
         

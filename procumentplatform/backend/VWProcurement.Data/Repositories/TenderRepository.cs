@@ -16,7 +16,7 @@ namespace VWProcurement.Data.Repositories
                 .Include(t => t.Buyer)
                 .ThenInclude(b => b.User)
                 .Include(t => t.Category)
-                .Where(t => t.Status == "Open" && t.ClosingDate > DateTime.UtcNow)
+                .Where(t => t.Status == TenderStatus.Open && t.ClosingDate > DateTime.UtcNow)
                 .ToListAsync();
         }
 
@@ -36,7 +36,7 @@ namespace VWProcurement.Data.Repositories
                 .Include(t => t.Buyer)
                 .ThenInclude(b => b.User)
                 .Include(t => t.Category)
-                .Where(t => t.Status == status.ToString())
+                .Where(t => t.Status == status)
                 .ToListAsync();
         }
 

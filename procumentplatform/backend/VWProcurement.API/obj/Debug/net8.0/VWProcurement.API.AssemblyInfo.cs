@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VWProcurement.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71064b7a3e3609875511d5c1081f33947f4a0692")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31fcb0024d50ec491f1706b6744642dd9d5aa87f")]
 [assembly: System.Reflection.AssemblyProductAttribute("VWProcurement.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VWProcurement.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -45,7 +45,7 @@ namespace VWProcurement.Data.Repositories
                 .Include(b => b.Supplier)
                 .ThenInclude(s => s.User)
                 .Include(b => b.Tender)
-                .Where(b => b.Status == status.ToString())
+                .Where(b => b.Status == status)
                 .ToListAsync();
         }
     }

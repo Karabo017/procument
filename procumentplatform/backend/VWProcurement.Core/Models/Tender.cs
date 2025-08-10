@@ -32,8 +32,7 @@ namespace VWProcurement.Core.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal? EstimatedValue { get; set; }
         
-        [StringLength(50)]
-        public string Status { get; set; } = "Draft";
+        public TenderStatus Status { get; set; } = TenderStatus.Draft;
         
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         
