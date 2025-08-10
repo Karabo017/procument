@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "agjnu4JTyfTLGgaxtcyMRMA4WBOkg2mV2hjv0niXxGg=",
+  "Hash": "tZPbXGbsvUX3hj4UhjJVcmAG9O2uDU1Ju76nQi9+bYQ=",
   "Source": "VWProcurement.API",
   "BasePath": "_content/VWProcurement.API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "VWProcurement.API\\wwwroot",
       "Source": "VWProcurement.API",
-      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
       "BasePath": "_content/VWProcurement.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\index.html",
       "SourceId": "VWProcurement.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
       "BasePath": "_content/VWProcurement.API",
       "RelativePath": "index#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -41,7 +41,7 @@
   "Endpoints": [
     {
       "Route": "index.3rr61adjhm.html",
-      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\index.html",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -86,7 +86,7 @@
     },
     {
       "Route": "index.html",
-      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\vw-procurement-backend\\VWProcurement.API\\wwwroot\\index.html",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {

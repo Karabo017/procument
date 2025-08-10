@@ -6,48 +6,48 @@ namespace VWProcurement.Core.Interfaces
     public interface ISupplierService
     {
         Task<IEnumerable<SupplierDto>> GetAllSuppliersAsync();
-        Task<SupplierDto?> GetSupplierByIdAsync(int id);
+        Task<SupplierDto?> GetSupplierByIdAsync(Guid id);
         Task<SupplierDto?> GetSupplierByEmailAsync(string email);
         Task<SupplierDto> CreateSupplierAsync(CreateSupplierDto dto);
-        Task<SupplierDto?> UpdateSupplierAsync(int id, UpdateSupplierDto dto);
-        Task<bool> DeleteSupplierAsync(int id);
+        Task<SupplierDto?> UpdateSupplierAsync(Guid id, UpdateSupplierDto dto);
+        Task<bool> DeleteSupplierAsync(Guid id);
         Task<IEnumerable<SupplierDto>> GetActiveSuppliersAsync();
     }
 
     public interface IBuyerService
     {
         Task<IEnumerable<BuyerDto>> GetAllBuyersAsync();
-        Task<BuyerDto?> GetBuyerByIdAsync(int id);
+        Task<BuyerDto?> GetBuyerByIdAsync(Guid id);
         Task<BuyerDto?> GetBuyerByEmailAsync(string email);
         Task<BuyerDto> CreateBuyerAsync(CreateBuyerDto dto);
-        Task<BuyerDto?> UpdateBuyerAsync(int id, UpdateBuyerDto dto);
-        Task<bool> DeleteBuyerAsync(int id);
+        Task<BuyerDto?> UpdateBuyerAsync(Guid id, UpdateBuyerDto dto);
+        Task<bool> DeleteBuyerAsync(Guid id);
         Task<IEnumerable<BuyerDto>> GetActiveBuyersAsync();
     }
 
     public interface ITenderService
     {
         Task<IEnumerable<TenderDto>> GetAllTendersAsync();
-        Task<TenderDto?> GetTenderByIdAsync(int id);
+        Task<TenderDto?> GetTenderByIdAsync(Guid id);
         Task<IEnumerable<TenderDto>> GetOpenTendersAsync();
-        Task<IEnumerable<TenderDto>> GetTendersByBuyerAsync(int buyerId);
+        Task<IEnumerable<TenderDto>> GetTendersByBuyerAsync(Guid buyerId);
         Task<TenderDto> CreateTenderAsync(CreateTenderDto dto);
-        Task<TenderDto?> UpdateTenderAsync(int id, UpdateTenderDto dto);
-        Task<bool> DeleteTenderAsync(int id);
-        Task<bool> PublishTenderAsync(int id, PublishTenderDto dto);
-        Task<bool> CloseTenderAsync(int id);
-        Task<bool> AwardTenderAsync(int tenderId, int bidId);
+        Task<TenderDto?> UpdateTenderAsync(Guid id, UpdateTenderDto dto);
+        Task<bool> DeleteTenderAsync(Guid id);
+        Task<bool> PublishTenderAsync(Guid id, PublishTenderDto dto);
+        Task<bool> CloseTenderAsync(Guid id);
+        Task<bool> AwardTenderAsync(Guid tenderId, Guid bidId);
     }
 
     public interface IBidService
     {
         Task<IEnumerable<BidDto>> GetAllBidsAsync();
-        Task<BidDto?> GetBidByIdAsync(int id);
-        Task<IEnumerable<BidDto>> GetBidsBySupplierAsync(int supplierId);
-        Task<IEnumerable<BidDto>> GetBidsByTenderAsync(int tenderId);
-        Task<BidDto> SubmitBidAsync(int supplierId, BidSubmissionDto dto);
-        Task<BidDto?> UpdateBidAsync(int id, UpdateBidDto dto);
-        Task<bool> WithdrawBidAsync(int id, int supplierId);
-        Task<bool> ReviewBidAsync(int id, BidStatus status, string? notes);
+        Task<BidDto?> GetBidByIdAsync(Guid id);
+        Task<IEnumerable<BidDto>> GetBidsBySupplierAsync(Guid supplierId);
+        Task<IEnumerable<BidDto>> GetBidsByTenderAsync(Guid tenderId);
+        Task<BidDto> SubmitBidAsync(Guid supplierId, BidSubmissionDto dto);
+        Task<BidDto?> UpdateBidAsync(Guid id, UpdateBidDto dto);
+        Task<bool> WithdrawBidAsync(Guid id, Guid supplierId);
+        Task<bool> ReviewBidAsync(Guid id, BidStatus status, string? notes);
     }
 }

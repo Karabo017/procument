@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/oDSDoxG56c=",
+  "dgSpecHash": "pv2R5H3tFeM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\procument-patform\\backend\\VWProcurement.Platform\\VWProcurement.Platform.csproj",
+  "projectFilePath": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.Platform\\VWProcurement.Platform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KaraboSeolwana\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\KaraboSeolwana\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

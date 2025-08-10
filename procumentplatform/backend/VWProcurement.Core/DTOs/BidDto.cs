@@ -5,7 +5,7 @@ namespace VWProcurement.Core.DTOs
 {
     public class BidDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public decimal Amount { get; set; }
         public string? Proposal { get; set; }
         public string? AttachmentPath { get; set; }
@@ -13,9 +13,9 @@ namespace VWProcurement.Core.DTOs
         public DateTime SubmittedAt { get; set; }
         public string? Notes { get; set; }
         public DateTime? ReviewedAt { get; set; }
-        public int SupplierId { get; set; }
+        public Guid SupplierId { get; set; }
         public string SupplierName { get; set; } = string.Empty;
-        public int TenderId { get; set; }
+        public Guid TenderId { get; set; }
         public string TenderTitle { get; set; } = string.Empty;
     }
 
@@ -28,10 +28,10 @@ namespace VWProcurement.Core.DTOs
         public string? Proposal { get; set; }
 
         [Required]
-        public int TenderId { get; set; }
+        public Guid TenderId { get; set; }
 
         [Required]
-        public int SupplierId { get; set; }
+        public Guid SupplierId { get; set; }
     }
 
     public class UpdateBidDto
@@ -53,6 +53,6 @@ namespace VWProcurement.Core.DTOs
         public string? Proposal { get; set; }
 
         [Required]
-        public int TenderId { get; set; }
+        public Guid TenderId { get; set; }
     }
 }

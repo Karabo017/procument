@@ -19,15 +19,47 @@ namespace VWProcurement.Platform.Services
             return bids.Select(MapToDto);
         }
 
-        public async Task<BidDto?> GetBidByIdAsync(int id)
+        public async Task<BidDto?> GetBidByIdAsync(Guid id)
         {
             var bid = await _unitOfWork.Bids.GetByIdAsync(id);
             return bid != null ? MapToDto(bid) : null;
         }
 
-        public async Task<IEnumerable<BidDto>> GetBidsBySupplierAsync(int supplierId)
+        public async Task<IEnumerable<BidDto>> GetBidsBySupplierAsync(Guid supplierId)
         {
             var bids = await _unitOfWork.Bids.GetBidsBySupplierAsync(supplierId);
+            return bids.Select(MapToDto);
+        }
+
+        public async Task<IEnumerable<BidDto>> GetBidsByTenderAsync(Guid tenderId)
+        {
+            var bids = await _unitOfWork.Bids.GetBidsByTenderAsync(tenderId);
+            return bids.Select(MapToDto);
+        }
+
+        public async Task<BidDto> SubmitBidAsync(Guid supplierId, BidSubmissionDto dto)
+        {
+            // Stub implementation
+            throw new NotImplementedException("SubmitBidAsync not yet implemented");
+        }
+
+        public async Task<BidDto?> UpdateBidAsync(Guid id, UpdateBidDto dto)
+        {
+            // Stub implementation
+            throw new NotImplementedException("UpdateBidAsync not yet implemented");
+        }
+
+        public async Task<bool> WithdrawBidAsync(Guid id, Guid supplierId)
+        {
+            // Stub implementation
+            throw new NotImplementedException("WithdrawBidAsync not yet implemented");
+        }
+
+        public async Task<bool> ReviewBidAsync(Guid id, BidStatus status, string? notes)
+        {
+            // Stub implementation
+            throw new NotImplementedException("ReviewBidAsync not yet implemented");
+        }
             return bids.Select(MapToDto);
         }
 

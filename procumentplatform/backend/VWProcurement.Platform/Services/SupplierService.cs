@@ -19,7 +19,7 @@ namespace VWProcurement.Platform.Services
             return suppliers.Select(MapToDto);
         }
 
-        public async Task<SupplierDto?> GetSupplierByIdAsync(int id)
+        public async Task<SupplierDto?> GetSupplierByIdAsync(Guid id)
         {
             var supplier = await _unitOfWork.Suppliers.GetByIdAsync(id);
             return supplier != null ? MapToDto(supplier) : null;
@@ -33,18 +33,34 @@ namespace VWProcurement.Platform.Services
 
         public async Task<SupplierDto> CreateSupplierAsync(CreateSupplierDto dto)
         {
+            // First create the user
+            var user = new User
+            {
+                Email = dto.Email,
+                Name = dto.Name,
+                PhoneNumber = dto.PhoneNumber,
+                UserType = "Supplier",
+                IsActive = true,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow
+            };
+
             var supplier = new Supplier
             {
-                Name = dto.Name,
-                Email = dto.Email,
-                PhoneNumber = dto.PhoneNumber,
+                UserId = user.Id,
+                CompanyName = dto.Name,
+                ContactPerson = dto.Name,
+                BusinessAddress = dto.Address ?? "",
+                City = "Unknown",
+                Province = "Unknown", 
+                PostalCode = "0000",
                 CompanyRegistrationNumber = dto.CompanyRegistrationNumber,
-                Address = dto.Address,
-                Website = dto.Website,
+                BusinessRegistrationNumber = dto.CompanyRegistrationNumber ?? "",
                 Description = dto.Description,
+                Website = dto.Website,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
-                IsActive = true
+                User = user
             };
 
             await _unitOfWork.Suppliers.AddAsync(supplier);
@@ -53,19 +69,16 @@ namespace VWProcurement.Platform.Services
             return MapToDto(supplier);
         }
 
-        public async Task<SupplierDto?> UpdateSupplierAsync(int id, UpdateSupplierDto dto)
+        public async Task<SupplierDto?> UpdateSupplierAsync(Guid id, UpdateSupplierDto dto)
         {
             var supplier = await _unitOfWork.Suppliers.GetByIdAsync(id);
             if (supplier == null) return null;
 
-            if (!string.IsNullOrEmpty(dto.Name)) supplier.Name = dto.Name;
-            if (!string.IsNullOrEmpty(dto.Email)) supplier.Email = dto.Email;
-            if (dto.PhoneNumber != null) supplier.PhoneNumber = dto.PhoneNumber;
+            if (!string.IsNullOrEmpty(dto.Name)) supplier.CompanyName = dto.Name;
             if (dto.CompanyRegistrationNumber != null) supplier.CompanyRegistrationNumber = dto.CompanyRegistrationNumber;
-            if (dto.Address != null) supplier.Address = dto.Address;
+            if (dto.Address != null) supplier.BusinessAddress = dto.Address;
             if (dto.Website != null) supplier.Website = dto.Website;
             if (dto.Description != null) supplier.Description = dto.Description;
-            if (dto.IsActive.HasValue) supplier.IsActive = dto.IsActive.Value;
             
             supplier.UpdatedAt = DateTime.UtcNow;
 
@@ -75,7 +88,7 @@ namespace VWProcurement.Platform.Services
             return MapToDto(supplier);
         }
 
-        public async Task<bool> DeleteSupplierAsync(int id)
+        public async Task<bool> DeleteSupplierAsync(Guid id)
         {
             var supplier = await _unitOfWork.Suppliers.GetByIdAsync(id);
             if (supplier == null) return false;
@@ -96,14 +109,14 @@ namespace VWProcurement.Platform.Services
             return new SupplierDto
             {
                 Id = supplier.Id,
-                Name = supplier.Name,
-                Email = supplier.Email,
-                PhoneNumber = supplier.PhoneNumber,
+                Name = supplier.User?.Name ?? supplier.CompanyName,
+                Email = supplier.User?.Email ?? "",
+                PhoneNumber = supplier.User?.PhoneNumber,
                 CompanyRegistrationNumber = supplier.CompanyRegistrationNumber,
-                Address = supplier.Address,
+                Address = supplier.BusinessAddress,
                 Website = supplier.Website,
                 Description = supplier.Description,
-                IsActive = supplier.IsActive,
+                IsActive = supplier.User?.IsActive ?? true,
                 CreatedAt = supplier.CreatedAt
             };
         }

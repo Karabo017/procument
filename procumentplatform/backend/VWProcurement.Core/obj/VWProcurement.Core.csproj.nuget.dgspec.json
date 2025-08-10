@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\procument-patform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj": {}
+    "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\procument-patform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj": {
+    "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\procument-patform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj",
+        "projectUniqueName": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj",
         "projectName": "VWProcurement.Core",
-        "projectPath": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\procument-patform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj",
+        "projectPath": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj",
         "packagesPath": "C:\\Users\\KaraboSeolwana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KaraboSeolwana\\Desktop\\VW-Procurement\\procument-patform\\backend\\VWProcurement.Core\\obj\\",
+        "outputPath": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

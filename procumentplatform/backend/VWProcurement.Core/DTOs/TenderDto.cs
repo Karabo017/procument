@@ -5,7 +5,7 @@ namespace VWProcurement.Core.DTOs
 {
     public class TenderDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string? Requirements { get; set; }
@@ -15,9 +15,9 @@ namespace VWProcurement.Core.DTOs
         public DateTime? PublishedAt { get; set; }
         public DateTime? ClosingDate { get; set; }
         public DateTime? AwardDate { get; set; }
-        public int BuyerId { get; set; }
+        public Guid BuyerId { get; set; }
         public string BuyerName { get; set; } = string.Empty;
-        public int? ApprovedByManagerId { get; set; }
+        public Guid? ApprovedByManagerId { get; set; }
         public string? ApprovedByManagerName { get; set; }
         public int BidsCount { get; set; }
     }
@@ -34,7 +34,7 @@ namespace VWProcurement.Core.DTOs
         public string? Requirements { get; set; }
         public decimal? EstimatedValue { get; set; }
         public DateTime? ClosingDate { get; set; }
-        public int BuyerId { get; set; }
+        public Guid BuyerId { get; set; }
     }
 
     public class UpdateTenderDto
@@ -47,7 +47,7 @@ namespace VWProcurement.Core.DTOs
         public decimal? EstimatedValue { get; set; }
         public TenderStatus? Status { get; set; }
         public DateTime? ClosingDate { get; set; }
-        public int? ApprovedByManagerId { get; set; }
+        public Guid? ApprovedByManagerId { get; set; }
     }
 
     public class PublishTenderDto
