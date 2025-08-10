@@ -54,10 +54,9 @@ namespace VWProcurement.Core.Models
         public Guid CategoryId { get; set; }
         
         // Navigation Properties
-        public virtual Buyer Buyer { get; set; } = null!;
-        public virtual TenderCategory Category { get; set; } = null!;
-        public virtual Manager? ApprovedByManager { get; set; };
-        
-        public virtual ICollection<Bid> Bids { get; set; } = new List<Bid>();
+    public virtual Buyer Buyer { get; set; } = null!;
+    public virtual TenderCategory Category { get; set; } = null!;
+    public virtual Manager? ApprovedByManager { get; set; }
+    public virtual ICollection<Bid> Bids { get; set; } = new List<Bid>();
     }
 }
