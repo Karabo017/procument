@@ -170,17 +170,26 @@ jobs:
           if [ -f api.pid ]; then kill $(cat api.pid) || true; fi
 
   trigger-ci:
-    name: Trigger CI
+    name: Manual CI Trigger (no-op commit)
     runs-on: ubuntu-latest
+  if: ${{ github.event_name == 'workflow_dispatch' }}
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
 
-      - name: Git pull
-        run: git pull
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Git commit
-        run: git commit --allow-empty -m "Trigger CI"
+      - name: No-op commit (skips subsequent CI via message)
+        run: |
+          git commit --allow-empty -m "ci: manual trigger [skip ci]"
 
-      - name: Git push
+      - name: Push
         run: git push
