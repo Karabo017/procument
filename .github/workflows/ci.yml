@@ -6,13 +6,19 @@ on:
   pull_request:
     branches: [main]
 
+# Prevent overlapping runs on the same ref
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  frontend-react-build:
-    name: Frontend (React) Build
+  frontend-lint-test-build:
+    name: Frontend (React) Lint, Test & Build
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./procumentplatform/frontend-react
+        working-directory: procumentplatform/frontend-react
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,6 +33,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint (if configured)
+        run: npm run lint --if-present
+
+      - name: Test (if configured)
+        run: npm test -- --ci --watchAll=false
+        continue-on-error: true
+
       - name: Build
         run: npm run build
 
@@ -35,13 +48,16 @@ jobs:
         with:
           name: frontend-react-dist
           path: procumentplatform/frontend-react/dist
+          if-no-files-found: error
+          retention-days: 7
 
   backend-build:
     name: Backend Build & Publish
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./procumentplatform/backend
+        working-directory: procumentplatform/backend
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -51,15 +67,24 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json', '**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
       - name: Restore
         run: dotnet restore vw-procurement-backend.sln
 
       - name: Build (Release)
         run: dotnet build vw-procurement-backend.sln --no-restore -c Release
 
-      # There are no unit test projects currently; keep a placeholder for future tests
-      #- name: Test
-      #  run: dotnet test vw-procurement-backend.sln --no-build -c Release --verbosity normal
+      # Keep tests optional until test projects exist
+      - name: Test (if test projects exist)
+        run: dotnet test vw-procurement-backend.sln --no-build -c Release --verbosity normal
+        continue-on-error: true
 
       - name: Publish API
         run: dotnet publish VWProcurement.API/VWProcurement.API.csproj -c Release -o VWProcurement.API/publish
@@ -69,3 +94,5 @@ jobs:
         with:
           name: backend-api-publish
           path: procumentplatform/backend/VWProcurement.API/publish
+          if-no-files-found: error
+          retention-days: 7

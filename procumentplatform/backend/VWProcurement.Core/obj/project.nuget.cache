@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qqa5rkkCdKI=",
+  "dgSpecHash": "nq3RzQnoB/oSsed518rE91TGk5jo0t5ng/0dWSoh5tAvtNBjnen0JYCzGITdG82ZRViHmQokQd+oqugoy5e8gg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.Core\\VWProcurement.Core.csproj",
+  "projectFilePath": "/home/runner/work/procument/procument/procumentplatform/backend/VWProcurement.Core/VWProcurement.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

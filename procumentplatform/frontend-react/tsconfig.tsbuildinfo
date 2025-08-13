@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/pages/buyer.tsx","./src/pages/home.tsx","./src/pages/login.tsx","./src/pages/manager.tsx","./src/pages/register.tsx","./src/pages/supplier.tsx","./src/pages/tenderdetails.tsx","./src/pages/tenders.tsx"],"version":"5.9.2"}
+{"root":["./src/App.tsx","./src/main.tsx","./src/app/audit-logs.ts","./src/pages/Buyer.tsx","./src/pages/Home.tsx","./src/pages/Login.tsx","./src/pages/Manager.tsx","./src/pages/Register.tsx","./src/pages/Supplier.tsx","./src/pages/TenderDetails.tsx","./src/pages/Tenders.tsx"],"version":"5.9.2"}
