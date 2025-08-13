@@ -1,16 +1,21 @@
 name: CI
+# Triggers:
+# - push: only on main (avoids duplicate runs when PRs are open)
+# - pull_request: on all branches (verifies PRs)
+# - workflow_dispatch: allow manual runs
+# Concurrency groups by PR number (if any) or ref to auto-cancel older runs.
 
 on:
   push:
     branches:
-      - "*"
+      - main
   pull_request:
     branches:
       - "*"
   workflow_dispatch:
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -163,3 +168,19 @@ jobs:
         shell: bash
         run: |
           if [ -f api.pid ]; then kill $(cat api.pid) || true; fi
+
+  trigger-ci:
+    name: Trigger CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Git pull
+        run: git pull
+
+      - name: Git commit
+        run: git commit --allow-empty -m "Trigger CI"
+
+      - name: Git push
+        run: git push

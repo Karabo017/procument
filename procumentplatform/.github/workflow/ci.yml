@@ -1,18 +1,11 @@
-name: CI
+name: CI (reference copy only; GitHub ignores this path)
+
+# NOTE: This file is kept only as a reference mirror.
+# GitHub Actions will NOT load workflows from procumentplatform/.github/workflow.
+# The active workflow is at .github/workflows/ci.yml
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
-
-permissions:
-  contents: read
 
 jobs:
   frontend-react-build:
