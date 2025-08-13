@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VWProcurement.Data;
+using VWProcurement.Core.Models;
 
 namespace VWProcurement.API.Controllers
 {
@@ -21,10 +22,9 @@ namespace VWProcurement.API.Controllers
             try
             {
                 var tenders = await _context.Tenders
-                    .Include(t => t.Buyer)
-                        .ThenInclude(b => b.User)
+                    .Include(t => t.Buyer) // Buyer is a User entity
                     .Include(t => t.Category)
-                    .Where(t => t.Status == "Open" || t.Status == "Closing Soon") // Only show active tenders
+                    .Where(t => t.Status == TenderStatus.Open) // Only show active tenders
                     .Select(t => new
                     {
                         id = t.Id,
@@ -45,17 +45,20 @@ namespace VWProcurement.API.Controllers
                             name = t.Category.Name,
                             isActive = t.Category.IsActive
                         },
-                        buyer = new
-                        {
-                            id = t.Buyer.Id,
-                            organizationName = t.Buyer.OrganizationName,
-                            isVerified = t.Buyer.IsVerified,
-                            user = new
+                        buyer = _context.Buyers
+                            .Where(b => b.UserId == t.BuyerId)
+                            .Select(b => new
                             {
-                                email = t.Buyer.User.Email,
-                                userType = t.Buyer.User.UserType
-                            }
-                        },
+                                id = b.Id,
+                                organizationName = b.OrganizationName,
+                                isVerified = b.IsVerified,
+                                user = new
+                                {
+                                    email = t.Buyer.Email,
+                                    userType = t.Buyer.Role.ToString()
+                                }
+                            })
+                            .FirstOrDefault(),
                         // Calculate days remaining
                         daysRemaining = (t.ClosingDate - DateTime.UtcNow).TotalDays,
                         // Calculate if closing soon (within 7 days)
@@ -73,16 +76,16 @@ namespace VWProcurement.API.Controllers
                     t.description,
                     t.requirements,
                     estimatedValue = t.estimatedValue,
-                    status = t.daysRemaining < 0 ? "Closed" : (t.isClosingSoon ? "Closing Soon" : t.status),
+                    status = t.daysRemaining < 0 ? "Closed" : (t.isClosingSoon ? "Closing Soon" : t.status.ToString()),
                     publishDate = t.publishDate?.ToString("yyyy-MM-dd"),
                     closingDate = t.closingDate.ToString("yyyy-MM-dd"),
                     t.awardDate,
                     t.createdAt,
                     t.updatedAt,
                     category = t.category.name,
-                    location = t.buyer.organizationName,
-                    buyerName = t.buyer.organizationName,
-                    isVerified = t.buyer.isVerified,
+                    location = t.buyer?.organizationName,
+                    buyerName = t.buyer?.organizationName,
+                    isVerified = t.buyer?.isVerified ?? false,
                     daysRemaining = Math.Max(0, (int)t.daysRemaining),
                     t.isClosingSoon,
                     // Add tender type based on estimated value
@@ -120,7 +123,6 @@ namespace VWProcurement.API.Controllers
             {
                 var tender = await _context.Tenders
                     .Include(t => t.Buyer)
-                        .ThenInclude(b => b.User)
                     .Include(t => t.Category)
                     .Include(t => t.Bids)
                         .ThenInclude(b => b.Supplier)
@@ -152,17 +154,20 @@ namespace VWProcurement.API.Controllers
                         name = tender.Category.Name,
                         isActive = tender.Category.IsActive
                     },
-                    buyer = new
-                    {
-                        id = tender.Buyer.Id,
-                        organizationName = tender.Buyer.OrganizationName,
-                        isVerified = tender.Buyer.IsVerified,
-                        user = new
+                    buyer = _context.Buyers
+                        .Where(b => b.UserId == tender.BuyerId)
+                        .Select(b => new
                         {
-                            email = tender.Buyer.User.Email,
-                            userType = tender.Buyer.User.UserType
-                        }
-                    },
+                            id = b.Id,
+                            organizationName = b.OrganizationName,
+                            isVerified = b.IsVerified,
+                            user = new
+                            {
+                                email = tender.Buyer.Email,
+                                userType = tender.Buyer.Role.ToString()
+                            }
+                        })
+                        .FirstOrDefault(),
                     bids = tender.Bids.Select(b => new
                     {
                         id = b.Id,

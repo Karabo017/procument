@@ -30,7 +30,7 @@ namespace VWProcurement.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<SupplierDto>> GetSupplier(int id)
+        public async Task<ActionResult<SupplierDto>> GetSupplier(Guid id)
         {
             var supplier = await _supplierService.GetSupplierByIdAsync(id);
             if (supplier == null)
@@ -64,7 +64,7 @@ namespace VWProcurement.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<SupplierDto>> UpdateSupplier(int id, UpdateSupplierDto dto)
+        public async Task<ActionResult<SupplierDto>> UpdateSupplier(Guid id, UpdateSupplierDto dto)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace VWProcurement.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSupplier(int id)
+        public async Task<IActionResult> DeleteSupplier(Guid id)
         {
             var result = await _supplierService.DeleteSupplierAsync(id);
             if (!result)

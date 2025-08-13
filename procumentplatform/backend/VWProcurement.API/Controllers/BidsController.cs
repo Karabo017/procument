@@ -24,7 +24,7 @@ namespace VWProcurement.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<BidDto>> GetBid(int id)
+        public async Task<ActionResult<BidDto>> GetBid(Guid id)
         {
             var bid = await _bidService.GetBidByIdAsync(id);
             if (bid == null)
@@ -34,21 +34,21 @@ namespace VWProcurement.API.Controllers
         }
 
         [HttpGet("by-supplier/{supplierId}")]
-        public async Task<ActionResult<IEnumerable<BidDto>>> GetBidsBySupplier(int supplierId)
+        public async Task<ActionResult<IEnumerable<BidDto>>> GetBidsBySupplier(Guid supplierId)
         {
             var bids = await _bidService.GetBidsBySupplierAsync(supplierId);
             return Ok(bids);
         }
 
         [HttpGet("by-tender/{tenderId}")]
-        public async Task<ActionResult<IEnumerable<BidDto>>> GetBidsByTender(int tenderId)
+        public async Task<ActionResult<IEnumerable<BidDto>>> GetBidsByTender(Guid tenderId)
         {
             var bids = await _bidService.GetBidsByTenderAsync(tenderId);
             return Ok(bids);
         }
 
         [HttpPost("submit/{supplierId}")]
-        public async Task<ActionResult<BidDto>> SubmitBid(int supplierId, BidSubmissionDto dto)
+        public async Task<ActionResult<BidDto>> SubmitBid(Guid supplierId, BidSubmissionDto dto)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace VWProcurement.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<BidDto>> UpdateBid(int id, UpdateBidDto dto)
+        public async Task<ActionResult<BidDto>> UpdateBid(Guid id, UpdateBidDto dto)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace VWProcurement.API.Controllers
         }
 
         [HttpDelete("{id}/withdraw/{supplierId}")]
-        public async Task<IActionResult> WithdrawBid(int id, int supplierId)
+        public async Task<IActionResult> WithdrawBid(Guid id, Guid supplierId)
         {
             var result = await _bidService.WithdrawBidAsync(id, supplierId);
             if (!result)
@@ -97,7 +97,7 @@ namespace VWProcurement.API.Controllers
         }
 
         [HttpPost("{id}/review")]
-        public async Task<IActionResult> ReviewBid(int id, [FromBody] ReviewBidRequest request)
+        public async Task<IActionResult> ReviewBid(Guid id, [FromBody] ReviewBidRequest request)
         {
             var result = await _bidService.ReviewBidAsync(id, request.Status, request.Notes);
             if (!result)

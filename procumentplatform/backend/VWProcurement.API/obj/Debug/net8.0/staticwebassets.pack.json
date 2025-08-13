@@ -1,6 +1,38 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\company-logo.png",
+      "PackagePath": "staticwebassets\\assets\\company-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-B-RoDDkw.js",
+      "PackagePath": "staticwebassets\\assets\\index-B-RoDDkw.js"
+    },
+    {
+      "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-BqN5l-4X.js",
+      "PackagePath": "staticwebassets\\assets\\index-BqN5l-4X.js"
+    },
+    {
+      "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-CD2blWtd.js",
+      "PackagePath": "staticwebassets\\assets\\index-CD2blWtd.js"
+    },
+    {
+      "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-ChnViOM5.js",
+      "PackagePath": "staticwebassets\\assets\\index-ChnViOM5.js"
+    },
+    {
+      "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-D6WAIrqt.js",
+      "PackagePath": "staticwebassets\\assets\\index-D6WAIrqt.js"
+    },
+    {
+      "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-MyV1gXoT.js",
+      "PackagePath": "staticwebassets\\assets\\index-MyV1gXoT.js"
+    },
+    {
+      "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-gqp2NFq3.css",
+      "PackagePath": "staticwebassets\\assets\\index-gqp2NFq3.css"
+    },
+    {
       "Id": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

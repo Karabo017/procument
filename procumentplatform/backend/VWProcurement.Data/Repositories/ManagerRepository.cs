@@ -28,7 +28,7 @@ namespace VWProcurement.Data.Repositories
         {
             return await _context.Managers
                 .Include(m => m.User)
-                .Where(m => m.User.IsActive)
+                .Where(m => m.User.Status == UserStatus.Active)
                 .ToListAsync();
         }
 

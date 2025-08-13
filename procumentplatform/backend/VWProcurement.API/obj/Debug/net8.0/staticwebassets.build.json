@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tZPbXGbsvUX3hj4UhjJVcmAG9O2uDU1Ju76nQi9+bYQ=",
+  "Hash": "+/rVUcKl60pLJdITjvAsutFN7kt5QOTZEbp1OO+hFEc=",
   "Source": "VWProcurement.API",
   "BasePath": "_content/VWProcurement.API",
   "Mode": "Default",
@@ -17,6 +17,174 @@
   ],
   "Assets": [
     {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\company-logo.png",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "assets/company-logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cebvltt7qy",
+      "Integrity": "dKSPlxwqVn14pMbktLf0epR1OmxOV1aDpyX64shJUMw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\company-logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-B-RoDDkw.js",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "assets/index-B-RoDDkw#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oda8m6kwcp",
+      "Integrity": "jNQeI+cXSSNGtIYthj57CdiTjWw7VXtmcimJQYVaGes=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-B-RoDDkw.js"
+    },
+    {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-BqN5l-4X.js",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "assets/index-BqN5l-4X#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p1dh75coag",
+      "Integrity": "s0jWnTwlAm78FvwJ6XhpnE3TF9oaPBNXmqTM4IH0sTg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-BqN5l-4X.js"
+    },
+    {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-CD2blWtd.js",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "assets/index-CD2blWtd#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fvvstrvtqc",
+      "Integrity": "W0n1OQ808NVAM1Xw/YA5wSwNvrhh8hQ0OfUYUwNBP1M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-CD2blWtd.js"
+    },
+    {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-ChnViOM5.js",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "assets/index-ChnViOM5#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0h7q82xuzv",
+      "Integrity": "rHf/Cu6a69SjBdVR1FDtijQyvIVLmA4Cx2a3VDO2DKE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-ChnViOM5.js"
+    },
+    {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-D6WAIrqt.js",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "assets/index-D6WAIrqt#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rwaymhm7ls",
+      "Integrity": "Rbp64c7f18qGtWXNiQe7L12IC4GW0ZeyKW95Gch2b+Y=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-D6WAIrqt.js"
+    },
+    {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-gqp2NFq3.css",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "assets/index-gqp2NFq3#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ctaoo4gss0",
+      "Integrity": "QAvB05Z/YI7zgceDVJVcK9Vnk5MLKl1NgE2zGegG0Zg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-gqp2NFq3.css"
+    },
+    {
+      "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-MyV1gXoT.js",
+      "SourceId": "VWProcurement.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\",
+      "BasePath": "_content/VWProcurement.API",
+      "RelativePath": "assets/index-MyV1gXoT#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e7yzais762",
+      "Integrity": "6ukAO3RjIKF/5Lk0Y/oT03aLDFvfJWVtqSEUUhzgGVA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-MyV1gXoT.js"
+    },
+    {
       "Identity": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\index.html",
       "SourceId": "VWProcurement.API",
       "SourceType": "Discovered",
@@ -31,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3rr61adjhm",
-      "Integrity": "AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8=",
+      "Fingerprint": "vvf8lxt1xs",
+      "Integrity": "lZScfVXefxWY2lDkraRVqq+dqQglQHjUPcG9For/5YA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
@@ -40,8 +208,8 @@
   ],
   "Endpoints": [
     {
-      "Route": "index.3rr61adjhm.html",
-      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\index.html",
+      "Route": "assets/company-logo.cebvltt7qy.png",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\company-logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -50,19 +218,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "16987"
+          "Value": "677"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/html"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8=\""
+          "Value": "\"dKSPlxwqVn14pMbktLf0epR1OmxOV1aDpyX64shJUMw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 04 Aug 2025 10:13:27 GMT"
+          "Value": "Mon, 11 Aug 2025 10:39:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -72,15 +240,626 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3rr61adjhm"
+          "Value": "cebvltt7qy"
         },
         {
           "Name": "label",
-          "Value": "index.html"
+          "Value": "assets/company-logo.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8="
+          "Value": "sha256-dKSPlxwqVn14pMbktLf0epR1OmxOV1aDpyX64shJUMw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/company-logo.png",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\company-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "677"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dKSPlxwqVn14pMbktLf0epR1OmxOV1aDpyX64shJUMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 10:39:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dKSPlxwqVn14pMbktLf0epR1OmxOV1aDpyX64shJUMw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-B-RoDDkw.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-B-RoDDkw.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "179437"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jNQeI+cXSSNGtIYthj57CdiTjWw7VXtmcimJQYVaGes=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:03:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jNQeI+cXSSNGtIYthj57CdiTjWw7VXtmcimJQYVaGes="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-B-RoDDkw.oda8m6kwcp.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-B-RoDDkw.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "179437"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jNQeI+cXSSNGtIYthj57CdiTjWw7VXtmcimJQYVaGes=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:03:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oda8m6kwcp"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-B-RoDDkw.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jNQeI+cXSSNGtIYthj57CdiTjWw7VXtmcimJQYVaGes="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-BqN5l-4X.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-BqN5l-4X.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "178931"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s0jWnTwlAm78FvwJ6XhpnE3TF9oaPBNXmqTM4IH0sTg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:01:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-s0jWnTwlAm78FvwJ6XhpnE3TF9oaPBNXmqTM4IH0sTg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-BqN5l-4X.p1dh75coag.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-BqN5l-4X.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "178931"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s0jWnTwlAm78FvwJ6XhpnE3TF9oaPBNXmqTM4IH0sTg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:01:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p1dh75coag"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-BqN5l-4X.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-s0jWnTwlAm78FvwJ6XhpnE3TF9oaPBNXmqTM4IH0sTg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-CD2blWtd.fvvstrvtqc.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-CD2blWtd.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "180131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W0n1OQ808NVAM1Xw/YA5wSwNvrhh8hQ0OfUYUwNBP1M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:15:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fvvstrvtqc"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-CD2blWtd.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-W0n1OQ808NVAM1Xw/YA5wSwNvrhh8hQ0OfUYUwNBP1M="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-CD2blWtd.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-CD2blWtd.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "180131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W0n1OQ808NVAM1Xw/YA5wSwNvrhh8hQ0OfUYUwNBP1M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:15:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-W0n1OQ808NVAM1Xw/YA5wSwNvrhh8hQ0OfUYUwNBP1M="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-ChnViOM5.0h7q82xuzv.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-ChnViOM5.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "179153"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rHf/Cu6a69SjBdVR1FDtijQyvIVLmA4Cx2a3VDO2DKE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:02:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0h7q82xuzv"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-ChnViOM5.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rHf/Cu6a69SjBdVR1FDtijQyvIVLmA4Cx2a3VDO2DKE="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-ChnViOM5.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-ChnViOM5.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "179153"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rHf/Cu6a69SjBdVR1FDtijQyvIVLmA4Cx2a3VDO2DKE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:02:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rHf/Cu6a69SjBdVR1FDtijQyvIVLmA4Cx2a3VDO2DKE="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-D6WAIrqt.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-D6WAIrqt.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164813"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rbp64c7f18qGtWXNiQe7L12IC4GW0ZeyKW95Gch2b+Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 11:20:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rbp64c7f18qGtWXNiQe7L12IC4GW0ZeyKW95Gch2b+Y="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-D6WAIrqt.rwaymhm7ls.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-D6WAIrqt.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164813"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rbp64c7f18qGtWXNiQe7L12IC4GW0ZeyKW95Gch2b+Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 11:20:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rwaymhm7ls"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-D6WAIrqt.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rbp64c7f18qGtWXNiQe7L12IC4GW0ZeyKW95Gch2b+Y="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-gqp2NFq3.css",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-gqp2NFq3.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2763"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QAvB05Z/YI7zgceDVJVcK9Vnk5MLKl1NgE2zGegG0Zg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:43:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QAvB05Z/YI7zgceDVJVcK9Vnk5MLKl1NgE2zGegG0Zg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-gqp2NFq3.ctaoo4gss0.css",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-gqp2NFq3.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2763"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QAvB05Z/YI7zgceDVJVcK9Vnk5MLKl1NgE2zGegG0Zg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:43:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ctaoo4gss0"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-gqp2NFq3.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QAvB05Z/YI7zgceDVJVcK9Vnk5MLKl1NgE2zGegG0Zg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-MyV1gXoT.e7yzais762.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-MyV1gXoT.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "180284"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ukAO3RjIKF/5Lk0Y/oT03aLDFvfJWVtqSEUUhzgGVA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:43:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e7yzais762"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-MyV1gXoT.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6ukAO3RjIKF/5Lk0Y/oT03aLDFvfJWVtqSEUUhzgGVA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-MyV1gXoT.js",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\assets\\index-MyV1gXoT.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "180284"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ukAO3RjIKF/5Lk0Y/oT03aLDFvfJWVtqSEUUhzgGVA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:43:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6ukAO3RjIKF/5Lk0Y/oT03aLDFvfJWVtqSEUUhzgGVA="
         }
       ]
     },
@@ -95,7 +874,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "16987"
+          "Value": "417"
         },
         {
           "Name": "Content-Type",
@@ -103,11 +882,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8=\""
+          "Value": "\"lZScfVXefxWY2lDkraRVqq+dqQglQHjUPcG9For/5YA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 04 Aug 2025 10:13:27 GMT"
+          "Value": "Mon, 11 Aug 2025 12:43:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -117,7 +896,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-AZXr9wgvwjOD6HH0afIrmevm+FE6Rc+bi2+FBr7L9E8="
+          "Value": "sha256-lZScfVXefxWY2lDkraRVqq+dqQglQHjUPcG9For/5YA="
+        }
+      ]
+    },
+    {
+      "Route": "index.vvf8lxt1xs.html",
+      "AssetFile": "C:\\Users\\KaraboSeolwana\\Desktop\\procument2\\procumentplatform\\backend\\VWProcurement.API\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lZScfVXefxWY2lDkraRVqq+dqQglQHjUPcG9For/5YA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 11 Aug 2025 12:43:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vvf8lxt1xs"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lZScfVXefxWY2lDkraRVqq+dqQglQHjUPcG9For/5YA="
         }
       ]
     }

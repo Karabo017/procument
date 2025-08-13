@@ -70,8 +70,8 @@ namespace VWProcurement.API.Controllers
                     .Select(u => new {
                         u.Id,
                         u.Email,
-                        u.UserType,
-                        u.IsActive,
+                        UserType = u.Role.ToString(),
+                        IsActive = u.Status == UserStatus.Active,
                         u.EmailVerified,
                         u.CreatedAt
                     })
@@ -146,8 +146,8 @@ namespace VWProcurement.API.Controllers
                     Id = Guid.NewGuid(),
                     Email = "test@frontend.com",
                     PasswordHash = BCrypt.Net.BCrypt.HashPassword("password123"),
-                    UserType = "Manager",
-                    IsActive = true,
+                    Role = UserRole.PlatformManager,
+                    Status = UserStatus.Active,
                     EmailVerified = true,
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow

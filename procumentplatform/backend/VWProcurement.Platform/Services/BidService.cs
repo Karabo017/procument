@@ -117,11 +117,13 @@ namespace VWProcurement.Platform.Services
                 Proposal = bid.Proposal,
                 AttachmentPath = bid.AttachmentPath,
                 Status = bid.Status,
-                SubmittedAt = bid.SubmittedAt,
+                SubmittedAt = bid.SubmittedAt ?? DateTime.UtcNow,
                 Notes = bid.Notes,
                 ReviewedAt = bid.ReviewedAt,
                 SupplierId = bid.SupplierId,
-                SupplierName = bid.Supplier?.User?.Name ?? "",
+                SupplierName = ((bid.Supplier?.User?.FirstName + " " + bid.Supplier?.User?.LastName).Trim() != "")
+                    ? ($"{bid.Supplier?.User?.FirstName} {bid.Supplier?.User?.LastName}").Trim()
+                    : (bid.Supplier?.User?.CompanyName ?? ""),
                 TenderId = bid.TenderId,
                 TenderTitle = bid.Tender?.Title ?? ""
             };

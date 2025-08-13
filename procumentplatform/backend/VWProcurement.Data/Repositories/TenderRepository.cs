@@ -14,7 +14,6 @@ namespace VWProcurement.Data.Repositories
         {
             return await _context.Tenders
                 .Include(t => t.Buyer)
-                .ThenInclude(b => b.User)
                 .Include(t => t.Category)
                 .Where(t => t.Status == TenderStatus.Open && t.ClosingDate > DateTime.UtcNow)
                 .ToListAsync();
@@ -24,7 +23,6 @@ namespace VWProcurement.Data.Repositories
         {
             return await _context.Tenders
                 .Include(t => t.Buyer)
-                .ThenInclude(b => b.User)
                 .Include(t => t.Category)
                 .Where(t => t.BuyerId == buyerId)
                 .ToListAsync();
@@ -34,7 +32,6 @@ namespace VWProcurement.Data.Repositories
         {
             return await _context.Tenders
                 .Include(t => t.Buyer)
-                .ThenInclude(b => b.User)
                 .Include(t => t.Category)
                 .Where(t => t.Status == status)
                 .ToListAsync();
@@ -44,11 +41,9 @@ namespace VWProcurement.Data.Repositories
         {
             return await _context.Tenders
                 .Include(t => t.Buyer)
-                .ThenInclude(b => b.User)
                 .Include(t => t.Category)
                 .Include(t => t.Bids)
                 .ThenInclude(b => b.Supplier)
-                .ThenInclude(s => s.User)
                 .FirstOrDefaultAsync(t => t.Id == id);
         }
 
@@ -56,7 +51,6 @@ namespace VWProcurement.Data.Repositories
         {
             return await _context.Tenders
                 .Include(t => t.Buyer)
-                .ThenInclude(b => b.User)
                 .Include(t => t.Category)
                 .Include(t => t.Bids)
                 .Where(t => t.Bids.Any())

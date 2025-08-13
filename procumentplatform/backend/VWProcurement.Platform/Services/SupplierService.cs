@@ -34,13 +34,16 @@ namespace VWProcurement.Platform.Services
         public async Task<SupplierDto> CreateSupplierAsync(CreateSupplierDto dto)
         {
             // First create the user
+            var nameParts = (dto.Name ?? string.Empty).Split(' ', StringSplitOptions.RemoveEmptyEntries);
             var user = new User
             {
                 Email = dto.Email,
-                Name = dto.Name,
+                FirstName = nameParts.FirstOrDefault(),
+                LastName = nameParts.Skip(1).FirstOrDefault(),
+                CompanyName = dto.Name,
                 PhoneNumber = dto.PhoneNumber,
-                UserType = "Supplier",
-                IsActive = true,
+                Role = UserRole.Supplier,
+                Status = UserStatus.Active,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
@@ -48,8 +51,8 @@ namespace VWProcurement.Platform.Services
             var supplier = new Supplier
             {
                 UserId = user.Id,
-                CompanyName = dto.Name,
-                ContactPerson = dto.Name,
+                CompanyName = dto.Name ?? string.Empty,
+                ContactPerson = dto.Name ?? string.Empty,
                 BusinessAddress = dto.Address ?? "",
                 City = "Unknown",
                 Province = "Unknown", 
@@ -109,14 +112,16 @@ namespace VWProcurement.Platform.Services
             return new SupplierDto
             {
                 Id = supplier.Id,
-                Name = supplier.User?.Name ?? supplier.CompanyName,
+                Name = (supplier.User?.FirstName + " " + supplier.User?.LastName).Trim() != ""
+                    ? ($"{supplier.User?.FirstName} {supplier.User?.LastName}").Trim()
+                    : (supplier.User?.CompanyName ?? supplier.CompanyName),
                 Email = supplier.User?.Email ?? "",
                 PhoneNumber = supplier.User?.PhoneNumber,
                 CompanyRegistrationNumber = supplier.CompanyRegistrationNumber,
                 Address = supplier.BusinessAddress,
                 Website = supplier.Website,
                 Description = supplier.Description,
-                IsActive = supplier.User?.IsActive ?? true,
+                IsActive = (supplier.User?.Status ?? UserStatus.Active) == UserStatus.Active,
                 CreatedAt = supplier.CreatedAt
             };
         }

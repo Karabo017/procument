@@ -69,7 +69,7 @@ namespace VWProcurement.Platform.Services
             if (!string.IsNullOrEmpty(dto.Description)) tender.Description = dto.Description;
             if (dto.Requirements != null) tender.Requirements = dto.Requirements;
             if (dto.EstimatedValue.HasValue) tender.EstimatedValue = dto.EstimatedValue;
-            if (dto.Status.HasValue) tender.Status = dto.Status.Value.ToString();
+            if (dto.Status.HasValue) tender.Status = dto.Status.Value;
             if (dto.ClosingDate.HasValue) tender.ClosingDate = dto.ClosingDate.Value;
             if (dto.ApprovedByManagerId.HasValue) tender.ApprovedByManagerId = dto.ApprovedByManagerId;
             
@@ -172,9 +172,13 @@ namespace VWProcurement.Platform.Services
                 ClosingDate = tender.ClosingDate,
                 AwardDate = tender.AwardDate,
                 BuyerId = tender.BuyerId,
-                BuyerName = tender.Buyer?.Name ?? "",
+                BuyerName = ((tender.Buyer?.FirstName + " " + tender.Buyer?.LastName).Trim() != "")
+                    ? ($"{tender.Buyer?.FirstName} {tender.Buyer?.LastName}").Trim()
+                    : (tender.Buyer?.CompanyName ?? ""),
                 ApprovedByManagerId = tender.ApprovedByManagerId,
-                ApprovedByManagerName = tender.ApprovedByManager?.Name,
+                ApprovedByManagerName = ((tender.ApprovedByManager?.FirstName + " " + tender.ApprovedByManager?.LastName).Trim() != "")
+                    ? ($"{tender.ApprovedByManager?.FirstName} {tender.ApprovedByManager?.LastName}").Trim()
+                    : (tender.ApprovedByManager?.CompanyName),
                 BidsCount = tender.Bids?.Count ?? 0
             };
         }

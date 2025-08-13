@@ -19,14 +19,14 @@ namespace VWProcurement.Data.Repositories
         public async Task<IEnumerable<User>> GetByRoleAsync(string role)
         {
             return await _context.Users
-                .Where(u => u.UserType == role)
+                .Where(u => u.Role.ToString() == role)
                 .ToListAsync();
         }
 
         public async Task<IEnumerable<User>> GetActiveUsersAsync()
         {
             return await _context.Users
-                .Where(u => u.IsActive)
+                .Where(u => u.Status == UserStatus.Active)
                 .ToListAsync();
         }
     }

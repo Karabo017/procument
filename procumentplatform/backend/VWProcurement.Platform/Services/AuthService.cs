@@ -31,7 +31,7 @@ namespace VWProcurement.Platform.Services
                 var users = await _unitOfWork.Users.GetAllAsync();
                 var user = users.FirstOrDefault(u => u.Email.ToLower() == loginDto.Email.ToLower());
 
-                if (user == null || !user.IsActive)
+                if (user == null || user.Status != UserStatus.Active)
                 {
                     return new AuthResultDto
                     {
@@ -108,10 +108,13 @@ namespace VWProcurement.Platform.Services
                 {
                     Email = registerDto.Email.ToLower(),
                     PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password),
-                    UserType = role,
+                    Role = Enum.Parse<UserRole>(role),
+                    FirstName = registerDto.Name?.Split(' ').FirstOrDefault() ?? "",
+                    LastName = registerDto.Name?.Split(' ').Skip(1).FirstOrDefault() ?? "",
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow,
-                    IsActive = true
+                    Status = UserStatus.Active,
+                    EmailVerified = true
                 };
 
                 await _unitOfWork.Users.AddAsync(user);
@@ -190,7 +193,7 @@ namespace VWProcurement.Platform.Services
             }
         }
 
-        public async Task<bool> ChangePasswordAsync(int userId, ChangePasswordDto changePasswordDto)
+        public async Task<bool> ChangePasswordAsync(Guid userId, ChangePasswordDto changePasswordDto)
         {
             try
             {
@@ -221,13 +224,13 @@ namespace VWProcurement.Platform.Services
             }
         }
 
-        public async Task<UserDto> GetUserByIdAsync(int userId)
+        public async Task<UserDto> GetUserByIdAsync(Guid userId)
         {
             var user = await _unitOfWork.Users.GetByIdAsync(userId);
             return user == null ? null : await MapToUserDtoAsync(user);
         }
 
-        public async Task<UserDto> UpdateUserProfileAsync(int userId, UpdateUserProfileDto updateDto)
+        public async Task<UserDto> UpdateUserProfileAsync(Guid userId, UpdateUserProfileDto updateDto)
         {
             try
             {
@@ -245,7 +248,12 @@ namespace VWProcurement.Platform.Services
                 }
 
                 // Update user properties
-                user.Name = updateDto.Name;
+                if (!string.IsNullOrEmpty(updateDto.Name))
+                {
+                    var nameParts = updateDto.Name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                    user.FirstName = nameParts.FirstOrDefault() ?? "";
+                    user.LastName = nameParts.Skip(1).FirstOrDefault() ?? "";
+                }
                 user.Email = updateDto.Email.ToLower();
                 user.CompanyName = updateDto.CompanyName;
                 user.PhoneNumber = updateDto.PhoneNumber;
@@ -255,7 +263,7 @@ namespace VWProcurement.Platform.Services
                 if (!string.IsNullOrEmpty(updateDto.ProfilePhotoBase64))
                 {
                     // Save profile photo and update URL
-                    user.ProfilePhotoUrl = await SaveProfilePhotoAsync(userId, updateDto.ProfilePhotoBase64);
+                    user.ProfilePhotoPath = await SaveProfilePhotoAsync(userId, updateDto.ProfilePhotoBase64);
                 }
 
                 await _unitOfWork.Users.UpdateAsync(user);
@@ -277,9 +285,9 @@ namespace VWProcurement.Platform.Services
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim(ClaimTypes.Name, user.Name),
+                    new Claim(ClaimTypes.Name, user.Name ?? ""),
                     new Claim(ClaimTypes.Email, user.Email),
-                    new Claim(ClaimTypes.Role, user.UserType)
+                    new Claim(ClaimTypes.Role, user.UserType ?? "")
                 }),
                 Expires = DateTime.UtcNow.AddHours(24),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -314,7 +322,7 @@ namespace VWProcurement.Platform.Services
             }
         }
 
-        public async Task LogoutAsync(int userId)
+        public async Task LogoutAsync(Guid userId)
         {
             // For now, just update last logout time if needed
             // In a production app, you might want to blacklist the token
@@ -333,15 +341,18 @@ namespace VWProcurement.Platform.Services
             {
                 Id = user.Id,
                 Email = user.Email,
-                UserType = user.UserType,
+                UserType = user.Role.ToString(),
                 CreatedAt = user.CreatedAt,
-                IsActive = user.IsActive
+                IsActive = user.Status == UserStatus.Active,
+                Name = !string.IsNullOrEmpty(user.FirstName) && !string.IsNullOrEmpty(user.LastName) 
+                    ? $"{user.FirstName} {user.LastName}"
+                    : user.CompanyName ?? user.Email
             };
 
-            // Get additional information based on user type
-            switch (user.UserType.ToLower())
+            // Get additional information based on user role
+            switch (user.Role)
             {
-                case "supplier":
+                case UserRole.Supplier:
                     var supplier = await _unitOfWork.Suppliers.GetByUserIdAsync(user.Id);
                     if (supplier != null)
                     {
@@ -350,7 +361,7 @@ namespace VWProcurement.Platform.Services
                     }
                     break;
                 
-                case "buyer":
+                case UserRole.Buyer:
                     var buyer = await _unitOfWork.Buyers.GetByUserIdAsync(user.Id);
                     if (buyer != null)
                     {
@@ -359,7 +370,7 @@ namespace VWProcurement.Platform.Services
                     }
                     break;
                 
-                case "manager":
+                case UserRole.PlatformManager:
                     var manager = await _unitOfWork.Managers.GetByUserIdAsync(user.Id);
                     if (manager != null)
                     {
@@ -367,12 +378,17 @@ namespace VWProcurement.Platform.Services
                         userDto.CompanyName = "VW Procurement"; // Default for managers
                     }
                     break;
+                    
+                case UserRole.PublicViewer:
+                default:
+                    userDto.CompanyName = "Public User";
+                    break;
             }
 
             return userDto;
         }
 
-        private async Task<string> SaveProfilePhotoAsync(int userId, string base64Image)
+        private async Task<string> SaveProfilePhotoAsync(Guid userId, string base64Image)
         {
             try
             {
