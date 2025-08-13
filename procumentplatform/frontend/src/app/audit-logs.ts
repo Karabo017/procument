@@ -1,5 +1,3 @@
-import { AuditLogs } from './audit-logs';
-
 // Lightweight stub to satisfy legacy imports during CI builds
 // Remove when Angular app is fully retired.
 
