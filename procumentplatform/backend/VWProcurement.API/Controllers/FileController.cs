@@ -40,7 +40,7 @@ namespace VWProcurement.API.Controllers
                 var fileName = $"{Guid.NewGuid()}_{file.FileName}";
                 var filePath = Path.Combine(uploadsPath, fileName);
 
-                // Save file
+                // Save file2
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     await file.CopyToAsync(stream);
@@ -54,7 +54,7 @@ namespace VWProcurement.API.Controllers
                 return StatusCode(500, $"Error uploading file: {ex.Message}");
             }
         }
-
+global`
         [HttpPost("upload/tender")]
         [Authorize]
         public async Task<IActionResult> UploadTenderDocument(IFormFile file)

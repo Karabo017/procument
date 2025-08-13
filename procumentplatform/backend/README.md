@@ -115,7 +115,7 @@ POST /api/suppliers
   "name": "ABC Manufacturing",
   "email": "contact@abcmfg.com",
   "phoneNumber": "+1234567890",
-  "companyRegistrationNumber": "REG123456"
+  "companyRegistrationNumber": "REG123456".
 }
 ```
 
